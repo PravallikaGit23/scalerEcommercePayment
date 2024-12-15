@@ -29,7 +29,7 @@ public class StripePaymentService implements Payment {
                         ).setAfterCompletion(PaymentLinkCreateParams.AfterCompletion.builder()
                                 .setType(PaymentLinkCreateParams.AfterCompletion.Type.REDIRECT)
                                 .setRedirect(PaymentLinkCreateParams.AfterCompletion.Redirect.builder()
-                                        .setUrl("https://google.com/?trx_id=" + "abc123").build()).build())
+                                        .setUrl("https://slimy-planes-say.loca.lt/webhook").build()).build())
                         .build();
         PaymentLink paymentLink = PaymentLink.create(params);
         return paymentLink.getUrl();
