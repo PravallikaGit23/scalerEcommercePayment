@@ -1,5 +1,8 @@
-package service;
+package dev.pravallika.paymentservice.service;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PaymentGatewaySelector {
 
     public RazorpayService razorpayService;

@@ -1,4 +1,4 @@
-package service;
+package dev.pravallika.paymentservice.service;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
@@ -6,12 +6,12 @@ import com.stripe.model.PaymentLink;
 import com.stripe.model.Price;
 import com.stripe.param.PaymentLinkCreateParams;
 import com.stripe.param.PriceCreateParams;
-import model.OrderDetails;
+import dev.pravallika.paymentservice.model.OrderDetails;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StripePaymentService implements Payment {
-    private String stripeKey = "sk_test_51QT3mvFjXY8kx9La8FOSpVguwI1EMroC04lUKe4OwGTeQSKdZJ6mbuTqwHeoBtosCUaYelSXSuAGrqFMBQlEBl6Q00vlUU8vJR";
+    private final String stripeKey = "sk_test_51QT3mvFjXY8kx9La8FOSpVguwI1EMroC04lUKe4OwGTeQSKdZJ6mbuTqwHeoBtosCUaYelSXSuAGrqFMBQlEBl6Q00vlUU8vJR";
 
     @Override
     public String generatePaymentLink(OrderDetails orderDetails) {
@@ -34,6 +34,7 @@ public class StripePaymentService implements Payment {
         PaymentLink paymentLink = PaymentLink.create(params);
         return paymentLink.getUrl();
     }catch(StripeException exception){
+            System.out.println(exception.getMessage());
         throw new RuntimeException(exception.getMessage());
     }
 }

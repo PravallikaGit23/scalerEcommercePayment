@@ -1,6 +1,6 @@
-package service;
+package dev.pravallika.paymentservice.service;
 
-import model.OrderDetails;
+import dev.pravallika.paymentservice.model.OrderDetails;
 import org.springframework.stereotype.Service;
 
 @Service

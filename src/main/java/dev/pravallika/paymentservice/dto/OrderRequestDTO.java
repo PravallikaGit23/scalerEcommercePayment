@@ -1,4 +1,4 @@
-package DTOs;
+package dev.pravallika.paymentservice.dto;
 
 import lombok.Getter;
 import lombok.Setter;

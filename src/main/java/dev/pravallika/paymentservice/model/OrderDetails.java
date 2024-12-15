@@ -1,4 +1,4 @@
-package model;
+package dev.pravallika.paymentservice.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
